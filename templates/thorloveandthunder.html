@@ -1,0 +1,130 @@
+<html>
+
+<style>
+body {
+background-color: black;
+background-image: url(static/css/thorloveandthunder.jpg);
+background-position: right top;
+background-repeat: no-repeat;
+background-size: 30% 100%;
+background-attachment: fixed;
+}
+
+.sidenav {
+  height: 100%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+<div style="margin-left:11%">
+<font color="white">
+<h1 style="font-size:45px;"> Thor: Love and Thunder </h1>
+</div>
+
+<div class="sidenav">
+  <a href="/">Home</a>
+</div>
+
+<body>
+
+<br>
+
+<div style="margin-left:11%">
+<font color="white">
+<font size="5">
+<p>{{ thor_rating }}</p>
+</font>
+</div>
+
+<br>
+
+<div style="margin-left:11%">
+<font color="white">
+<h3 style="font-size:20px;"> Plot </h3>
+<font size="5">
+<p> Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr <br> the God Butcher, who intends to make the gods extinct. </p>
+</font>
+</div>
+
+<br>
+
+<div style="margin-left:11%">
+<font color="white">
+<h3 style="font-size:20px;"> Director </h3>
+<font size="5">
+<p> Taika Waititi </p>
+</font>
+</div>
+
+<br>
+
+<div style="margin-left:11%">
+<font color="white">
+<h3 style="font-size:20px;"> Cast </h3>
+<font size="5">
+<p> Chris Hemsworth, Christian Bale, Natalie Portman </p>
+</font>
+</div>
+
+<br>
+
+<div style="margin-left:11%">
+<font color="white">
+<h3 style="font-size:20px;"> Genre </h3>
+<font size="5">
+<p> Action, Adventure, Fantasy </p>
+</font>
+</div>
+
+<br>
+
+<div style="margin-left:11%">
+<font color="white">
+<h3 style="font-size:20px;"> Review </h3>
+<img src={{url}} alt="Spider-Man" height="40%" width="40%">
+
+</div>
+
+</body>
+</html>
