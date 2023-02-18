@@ -70,9 +70,7 @@ def wordCloudShangChi(df):
                           height=1000
                          ).generate(bigstring)
     plt.axis('off')
-    wordcloud.to_file("static/images/shangchi/shangchi/shangchi.png")
-    
-    
+    wordcloud.to_file("static/images/shangchi/shangchi/shangchi.png")      
     
 def wordCloudEternals(df):
     df['processed_text'] = df['content'].str.lower().str.replace('(@[a-z0-9]+)\w+',' ').str.replace('(http\S+)', ' ').str.replace('([^0-9a-z \t])',' ').str.replace(' +',' ').apply(lambda x: [i for i in x.split(' ') if not i in stop_words])
@@ -111,20 +109,8 @@ def wordCloudBlackPanther(df):
                           height=1000
                          ).generate(bigstring)
     plt.axis('off')
+    print(wordcloud)
     wordcloud.to_file("static/images/blackpanther/blackpanther/blackpanther.png")
-    
-def wordCloudAntMan(df):
-    df['processed_text'] = df['content'].str.lower().str.replace('(@[a-z0-9]+)\w+',' ').str.replace('(http\S+)', ' ').str.replace('([^0-9a-z \t])',' ').str.replace(' +',' ').apply(lambda x: [i for i in x.split(' ') if not i in stop_words])
-    bigstring = df['processed_text'].apply(lambda x: ' '.join(x)).str.cat(sep=' ')
-    plt.figure(figsize=(12,12))
-    wordcloud = WordCloud(stopwords=STOPWORDS,
-                          background_color='white',
-                          collocations=False,
-                          width=1200,
-                          height=1000
-                         ).generate(bigstring)
-    plt.axis('off')
-    wordcloud.to_file("static/images/antman/antman/antman.png")
     
 @app.route('/')
 def homePage():
@@ -137,6 +123,7 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
     
 @app.route('/spiderman')
 def spiderMan():
@@ -204,12 +191,12 @@ def BlackPanther():
 
 @app.route('/antman')
 def AntMan():
-    Antman = ia.get_movie('10954600')
-    antman_rating_fetch = ia.get_movie('10954600', 'vote details')
-    antman_rating = antman_rating_fetch.get('arithmetic mean')
-    df = createDataframe(Antman)
-    wordCloudAntMan(df)
-    return render_template('antman.html', url='/static/images/antman/antman/antman.png', antman_rating='Rating: {}/10'.format(antman_rating))
+    #Antman = ia.get_movie('10954600')
+    #antman_rating_fetch = ia.get_movie('10954600', 'vote details')
+    #antman_rating = antman_rating_fetch.get('arithmetic mean')
+    #df = createDataframe(AntMan)
+    #wordCloudAntMan(df)
+    return render_template('antman.html')
 
 @app.route('/gotg')
 def Gotg():
